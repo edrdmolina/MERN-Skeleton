@@ -1,24 +1,25 @@
 {
-  "name": "bobs-burgers",
+  "name": "mern-skeleton",
   "version": "1.0.0",
-  "description": "Backend API for Bobs-Burgers",
+  "description": "Skeleton for starting MERN stack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "client-install": "npm install --prefix client",
     "start": "node index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Eduardo Molina",
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^6.2.2",
     "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.5",
-    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
-    "helmet": "^5.0.1",
     "mongoose": "^6.0.8"
   },
   "devDependencies": {
